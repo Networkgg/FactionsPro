@@ -401,6 +401,7 @@ class FactionCommands {
                             $sender->sendMessage(TextFormat::GOLD . TextFormat::ITALIC . "|^Players^| : " . TextFormat::LIGHT_PURPLE . "$numPlayers" . TextFormat::RESET);
                             $sender->sendMessage(TextFormat::GOLD . TextFormat::ITALIC . "|&Strength&| : " . TextFormat::RED . "$power" . " STR" . TextFormat::RESET);
                             $sender->sendMessage(TextFormat::GOLD . TextFormat::ITALIC . "|*Description*| : " . TextFormat::AQUA . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
+                            $sender->sendMessage(TextFormat::GOLD . TextFormat::ITALIC . "|@Home-Cords@| : " . TextFormat::DARK_BLUE . "$hc" . TextFormat::RESET);
                             $sender->sendMessage(TextFormat::GOLD . TextFormat::ITALIC . "-------INFORMATION-------" . TextFormat::RESET);
                         } else {
                             if (!$this->plugin->isInFaction($player)) {
@@ -1183,12 +1184,6 @@ class FactionCommands {
         } else {
             $this->plugin->getServer()->getLogger()->info($this->plugin->formatMessage("Please run command in game"));
         }
-                     //////////////////////// Rank ////////////////////////
-                     if (strtolower($args[0]) == "quest") {
-                        $sender->sendMessage($this->plugin->formatMessage("Quests are 1k Power for [Bronze] Fac Tag, 5k Power for [Silver] Fac Tag, and 10k Power for [Gold] Fac Tag. "));
-                        return true;
-                     }
-                     if()
     }
 
 }
