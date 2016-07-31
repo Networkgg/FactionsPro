@@ -235,9 +235,9 @@ class FactionMain extends PluginBase implements Listener {
         while ($resultArr = $result->fetchArray(SQLITE3_ASSOC)) {
             $row[$i]['player'] = $resultArr['player'];
             if ($this->getServer()->getPlayerExact($row[$i]['player']) instanceof Player) {
-                $team .= TextFormat::ITALIC . TextFormat::AQUA . $row[$i]['player'] . TextFormat::GREEN . "[ON]" . TextFormat::RESET . TextFormat::WHITE . "||" . TextFormat::RESET;
+                $team .= TextFormat::ITALIC . TextFormat::GREEN . $row[$i]['player'] . TextFormat::GREEN . "[ON]" . TextFormat::RESET . TextFormat::WHITE . "||" . TextFormat::RESET;
             } else {
-                $team .= TextFormat::ITALIC . TextFormat::AQUA . $row[$i]['player'] . TextFormat::RED . "[OFF]" . TextFormat::RESET . TextFormat::WHITE . "||" . TextFormat::RESET;
+                $team .= TextFormat::ITALIC . TextFormat::GREEN . $row[$i]['player'] . TextFormat::RED . "[OFF]" . TextFormat::RESET . TextFormat::WHITE . "||" . TextFormat::RESET;
             }
             $i = $i + 1;
         }
@@ -424,10 +424,10 @@ class FactionMain extends PluginBase implements Listener {
         $f = $this->getPlayerFaction($player);
         $n = $this->getNumberOfPlayers($f);
         if (!$this->isInFaction($player)) {
-            $p->setNameTag(TextFormat::ITALIC . TextFormat::YELLOW . "<$player>");
+            $p->setNameTag(TextFormat::ITALIC . TextFormat::GREEN . "<$player>");
         } else {
-            $p->setNameTag(TextFormat::ITALIC . TextFormat::GOLD . "<$f> " .
-                    TextFormat::ITALIC . TextFormat::YELLOW . "<$player>");
+            $p->setNameTag(TextFormat::ITALIC . TextFormat::LIGHT_GREEN . "<$f> " .
+                    TextFormat::ITALIC . TextFormat::GREEN . "<$player>");
         }
     }
 
