@@ -56,7 +56,7 @@ class FactionListener implements Listener {
 					if($this->plugin->getPlayerFaction($fP->getName()) == $faction){
 						if($this->plugin->getServer()->getPlayer($fP->getName())){
 							$PCE->setCancelled(true);
-							$this->plugin->getServer()->getPlayer($fP->getName())->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::BLUE." $player: ".TextFormat::AQUA. $msg);
+							$this->plugin->getServer()->getPlayer($fP->getName())->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::GREEN." $player: ".TextFormat::WHITE. $msg);
 						}
 					}
 				}
@@ -69,10 +69,10 @@ class FactionListener implements Listener {
 				$db = $this->plugin->db->query("SELECT * FROM master WHERE faction='$faction'");
 				foreach($this->plugin->getServer()->getOnlinePlayers() as $fP){
 					if($this->plugin->areAllies($this->plugin->getPlayerFaction($fP->getName()), $faction)){
-						if($this->plugin->getServer()->getPlayer($fP->getName())){
+						if($this->plugin->getServer()->getPlayer($fP->getName()))
 							$PCE->setCancelled(true);
-							$this->plugin->getServer()->getPlayer($fP->getName())->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::BLUE." $player: ".TextFormat::AQUA. $msg);
-							$PCE->getPlayer()->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::BLUE." $player: ".TextFormat::AQUA. $msg);
+							$this->plugin->getServer()->getPlayer($fP->getName())->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::GREEN." $player: ".TextFormat::WHITE. $msg);
+							$PCE->getPlayer()->sendMessage(TextFormat::DARK_GREEN."[$faction]".TextFormat::GREEN." $player: ".TextFormat::WHITE. $msg);
 						}
 					}
 				}
